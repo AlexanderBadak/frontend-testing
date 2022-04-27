@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test --watchAll",
+    "test": "react-scripts test --watchAll --testPathIgnorePatterns=src/cypress",
     "cypress": "cypress open",
     "lint": "eslint ./src/**/*.{ts,tsx}",
     "npm-install": "npm install",
