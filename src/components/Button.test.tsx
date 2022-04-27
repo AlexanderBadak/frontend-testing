@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import Button from './Button'
@@ -18,7 +18,7 @@ describe('<Button />', () => {
         props = {...defaultProps}
     })
 
-    it('should render and call onClick', () => {
+    it('should render and call onClick', async () => {
         //Act
         render(<Button {...props} />)
 
@@ -28,10 +28,12 @@ describe('<Button />', () => {
 
         //Assert
         expect(buttonElement).toBeVisible()
-        expect(props.onClick).toHaveBeenCalledTimes(1)
+        await waitFor(() => {
+            expect(props.onClick).toHaveBeenCalledTimes(1)
+        })
     })
 
-    it('should call onClick 5 times', () => {
+    it('should call onClick 5 times', async () => {
         //Act
         render(<Button {...props} />)
 
@@ -43,6 +45,8 @@ describe('<Button />', () => {
 
         //Assert
         expect(buttonElement).toBeVisible()
-        expect(props.onClick).toHaveBeenCalledTimes(5)
+        await waitFor(() => {
+            expect(props.onClick).toHaveBeenCalledTimes(5)
+        })
     })
 })
