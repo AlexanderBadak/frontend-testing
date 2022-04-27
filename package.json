@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "lint": "eslint ./src/**/*.{ts,tsx}",
     "npm-install": "npm install",
     "outdated": "npm outdated",

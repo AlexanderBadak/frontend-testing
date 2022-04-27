@@ -4,11 +4,11 @@ import CounterView from './CounterView'
 
 describe('<CounterView />', () => {
     const onClick = jest.fn()
-    const clicks = 0
+    const count = 0
 
     const defaultProps = {
         onClick,
-        clicks
+        count
     }
 
     let props = {...defaultProps}
@@ -38,7 +38,7 @@ describe('<CounterView />', () => {
 
         test('Button should have scale 1.3', () => {
             //Arrange
-            props.clicks = 3
+            props.count = 3
             const buttonWrapperTestId = 'button-wrapper'
     
             //Act

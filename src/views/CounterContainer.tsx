@@ -12,7 +12,7 @@ const CounterContainer = () => {
     }
 
     return (
-        <CounterView onClick={onClick} clicks={count} />
+        <CounterView onClick={onClick} count={count} />
     )
 }
 

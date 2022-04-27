@@ -12,27 +12,27 @@ const Container = styled.div`
         
     }
 `
-const ButtonWrapper = styled.div<{clickCount: number}>`
+const ButtonWrapper = styled.div<{count: number}>`
     position: absolute;
     top: 50%;
     left: 50%;
     right: 50%;
     bottom: 50%;
-    transform: scale(${p => p.clickCount * .1 + 1});
+    transform: scale(${p => p.count * .1 + 1});
 `
 
 type TProps = {
     onClick: () => void
-    clicks: number
+    count: number
 }
 
 const CounterView = (props: TProps) => {
-    const { clicks, onClick } = props
+    const { count, onClick } = props
 
     return (
         <Container>
-            <ButtonWrapper clickCount={clicks} data-testid='button-wrapper'>
-                <Button text={`Increment (${clicks})`} onClick={onClick} />
+            <ButtonWrapper count={count} data-testid='button-wrapper'>
+                <Button text={`Increment (${count})`} onClick={onClick} />
             </ButtonWrapper>
         </Container>
     )
